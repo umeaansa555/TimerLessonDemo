@@ -34,6 +34,7 @@ namespace TimerLessonDemo
             this.startButton = new System.Windows.Forms.Button();
             this.countTimer = new System.Windows.Forms.Timer(this.components);
             this.colorLabel = new System.Windows.Forms.Label();
+            this.stopwatchLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // counterLabel
@@ -51,13 +52,13 @@ namespace TimerLessonDemo
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(122, 47);
             this.startButton.TabIndex = 1;
-            this.startButton.Text = "Start";
+            this.startButton.Text = "Start Timer";
             this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // countTimer
             // 
-            this.countTimer.Enabled = true;
-            this.countTimer.Interval = 1000;
+            this.countTimer.Interval = 250;
             this.countTimer.Tick += new System.EventHandler(this.countTimer_Tick);
             // 
             // colorLabel
@@ -69,11 +70,21 @@ namespace TimerLessonDemo
             this.colorLabel.TabIndex = 2;
             this.colorLabel.Text = "ColorLabel";
             // 
+            // stopwatchLabel
+            // 
+            this.stopwatchLabel.AutoSize = true;
+            this.stopwatchLabel.Location = new System.Drawing.Point(69, 155);
+            this.stopwatchLabel.Name = "stopwatchLabel";
+            this.stopwatchLabel.Size = new System.Drawing.Size(78, 13);
+            this.stopwatchLabel.TabIndex = 3;
+            this.stopwatchLabel.Text = "stopwatchlabel";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(316, 450);
+            this.Controls.Add(this.stopwatchLabel);
             this.Controls.Add(this.colorLabel);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.counterLabel);
@@ -90,6 +101,7 @@ namespace TimerLessonDemo
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Timer countTimer;
         private System.Windows.Forms.Label colorLabel;
+        private System.Windows.Forms.Label stopwatchLabel;
     }
 }
 

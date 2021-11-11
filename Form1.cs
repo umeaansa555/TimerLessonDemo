@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Diagnostics;
+
+
 namespace TimerLessonDemo
 {
     public partial class Form1 : Form
     {
         int countValue = 0;
+        Stopwatch myWatch = new Stopwatch();
 
         public Form1()
         {
@@ -41,6 +45,26 @@ namespace TimerLessonDemo
                 }
             }
 
+        }
+
+        private void startButton_Click(object sender, EventArgs e)
+        {
+            // pause button timer
+            if(countTimer.Enabled == false)
+            {
+                countTimer.Enabled = true;
+                startButton.Text = "Stop";
+
+                
+                myWatch.Start();
+                stopwatchLabel.Text = myWatch.Elapsed + "";
+            }
+            else
+            {
+                countTimer.Enabled = false;
+                startButton.Text = "Start";
+                myWatch.Stop();
+            }
         }
     }
 }
