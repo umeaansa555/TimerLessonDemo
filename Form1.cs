@@ -23,19 +23,24 @@ namespace TimerLessonDemo
         {
             countValue++;
             counterLabel.Text = $"{countValue}";
-            
-            if(colorLabel.BackColor == Color.Green)
+
+            /// change color once a second while the timer ticks at normal speed
+            if (countValue % 4 == 0)
             {
-                colorLabel.BackColor = Color.Red;
+                if (colorLabel.BackColor == Color.Green)
+                {
+                    colorLabel.BackColor = Color.Red;
+                }
+                else if (colorLabel.BackColor == Color.Red)
+                {
+                    colorLabel.BackColor = Color.Orange;
+                }
+                else
+                {
+                    colorLabel.BackColor = Color.Green;
+                }
             }
-            else if(colorLabel.BackColor == Color.Red)
-            {
-                colorLabel.BackColor = Color.Orange;
-            }
-            else
-            {
-                colorLabel.BackColor = Color.Green;
-            }
+
         }
     }
 }
